@@ -1,0 +1,457 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud DNS API
+  description: >-
+    Manages DNS zones and resource record sets on Google Cloud, including creating
+    managed zones, configuring DNS records, and managing DNS policies.
+  version: 1.0.0
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/dns
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+  - url: https://dns.googleapis.com/dns/v1
+    description: Google Cloud DNS API v1
+tags:
+  - name: ManagedZones
+    description: Manage DNS zones
+  - name: ResourceRecordSets
+    description: Manage DNS resource record sets
+  - name: Changes
+    description: Manage DNS changes
+  - name: Policies
+    description: Manage DNS policies
+paths:
+  /projects/{project}/managedZones:
+    get:
+      operationId: listManagedZones
+      summary: List Managed Zones
+      description: Enumerates managed zones that have been created.
+      tags:
+        - ManagedZones
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: maxResults
+          in: query
+          schema:
+            type: integer
+        - name: pageToken
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  managedZones:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ManagedZone'
+                  nextPageToken:
+                    type: string
+    post:
+      operationId: createManagedZone
+      summary: Create Managed Zone
+      description: Creates a new managed zone.
+      tags:
+        - ManagedZones
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ManagedZone'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ManagedZone'
+  /projects/{project}/managedZones/{managedZone}:
+    get:
+      operationId: getManagedZone
+      summary: Get Managed Zone
+      description: Fetches the representation of an existing managed zone.
+      tags:
+        - ManagedZones
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: managedZone
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ManagedZone'
+    patch:
+      operationId: patchManagedZone
+      summary: Update Managed Zone
+      description: Applies a partial update to an existing managed zone.
+      tags:
+        - ManagedZones
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: managedZone
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ManagedZone'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+    delete:
+      operationId: deleteManagedZone
+      summary: Delete Managed Zone
+      description: Deletes a previously created managed zone.
+      tags:
+        - ManagedZones
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: managedZone
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successful deletion
+  /projects/{project}/managedZones/{managedZone}/rrsets:
+    get:
+      operationId: listResourceRecordSets
+      summary: List Resource Record Sets
+      description: Enumerates resource record sets that are associated with the managed zone.
+      tags:
+        - ResourceRecordSets
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: managedZone
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: name
+          in: query
+          schema:
+            type: string
+        - name: type
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  rrsets:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ResourceRecordSet'
+                  nextPageToken:
+                    type: string
+    post:
+      operationId: createResourceRecordSet
+      summary: Create Resource Record Set
+      description: Creates a new resource record set.
+      tags:
+        - ResourceRecordSets
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: managedZone
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResourceRecordSet'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceRecordSet'
+  /projects/{project}/managedZones/{managedZone}/changes:
+    get:
+      operationId: listChanges
+      summary: List Changes
+      description: Enumerates changes to a managed zone.
+      tags:
+        - Changes
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: managedZone
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  changes:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Change'
+                  nextPageToken:
+                    type: string
+    post:
+      operationId: createChange
+      summary: Create Change
+      description: Atomically updates the resource record set collection.
+      tags:
+        - Changes
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: managedZone
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Change'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Change'
+  /projects/{project}/policies:
+    get:
+      operationId: listPolicies
+      summary: List Policies
+      description: Enumerates all policies associated with a project.
+      tags:
+        - Policies
+      parameters:
+        - name: project
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  policies:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Policy'
+                  nextPageToken:
+                    type: string
+components:
+  schemas:
+    ManagedZone:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        dnsName:
+          type: string
+        description:
+          type: string
+        nameServers:
+          type: array
+          items:
+            type: string
+        visibility:
+          type: string
+          enum:
+            - public
+            - private
+        dnssecConfig:
+          type: object
+          properties:
+            state:
+              type: string
+              enum:
+                - 'off'
+                - 'on'
+                - transfer
+            kind:
+              type: string
+        creationTime:
+          type: string
+          format: date-time
+    ResourceRecordSet:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum:
+            - A
+            - AAAA
+            - CNAME
+            - MX
+            - NS
+            - SOA
+            - TXT
+            - SRV
+            - PTR
+            - CAA
+        ttl:
+          type: integer
+        rrdatas:
+          type: array
+          items:
+            type: string
+        signatureRrdatas:
+          type: array
+          items:
+            type: string
+    Change:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          enum:
+            - pending
+            - done
+        startTime:
+          type: string
+          format: date-time
+        additions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceRecordSet'
+        deletions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceRecordSet'
+    Policy:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        enableInboundForwarding:
+          type: boolean
+        enableLogging:
+          type: boolean
+        networks:
+          type: array
+          items:
+            type: object
+            properties:
+              networkUrl:
+                type: string
+        alternativeNameServerConfig:
+          type: object
+          properties:
+            targetNameServers:
+              type: array
+              items:
+                type: object
+                properties:
+                  ipv4Address:
+                    type: string
+                  forwardingPath:
+                    type: string
+    Operation:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+        dnsKeyContext:
+          type: object
+        zoneContext:
+          type: object
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/ndev.clouddns.readwrite: Full access to Cloud DNS
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud Platform
+security:
+  - oauth2:
+      - https://www.googleapis.com/auth/ndev.clouddns.readwrite

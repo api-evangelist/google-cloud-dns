@@ -1,0 +1,47 @@
+name: Google Cloud DNS
+description: >-
+  Google Cloud DNS is a scalable, reliable, and managed authoritative Domain Name
+  System (DNS) service running on the same infrastructure as Google. It provides
+  low-latency, high-availability DNS serving with 100% uptime SLA, supporting
+  both public and private DNS zones for domain name resolution.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: >-
+  https://raw.githubusercontent.com/api-search/google-cloud-dns/refs/heads/main/apis.yml
+created: '2026-03-13'
+modified: '2026-03-13'
+specificationVersion: '0.18'
+tags:
+  - Google Cloud
+  - DNS
+  - Domain Names
+  - Networking
+  - Name Resolution
+apis:
+  - name: Google Cloud DNS API
+    description: >-
+      The Cloud DNS API enables programmatic management of DNS zones and resource
+      record sets, including creating and configuring managed zones, adding and
+      modifying DNS records, and managing DNS policies for private zones.
+    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://cloud.google.com/dns/docs/reference/v1
+    baseURL: https://dns.googleapis.com
+    tags:
+      - Managed Zones
+      - Resource Record Sets
+      - DNS Policies
+      - Changes
+    properties:
+      - type: OpenAPI
+        url: openapi/dns-openapi.yml
+      - type: JSONSchema
+        url: json-schema/dns-managedzone.json
+common:
+  - type: GettingStarted
+    url: https://cloud.google.com/dns/docs/quickstart
+  - type: Pricing
+    url: https://cloud.google.com/dns/pricing
+  - type: JSON-LD
+    url: json-ld/dns-context.jsonld
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
