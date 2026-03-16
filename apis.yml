@@ -1,3 +1,4 @@
+aid: google-cloud-dns
 name: Google Cloud DNS
 description: >-
   Google Cloud DNS is a scalable, reliable, and managed authoritative Domain Name
@@ -8,8 +9,9 @@ image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jp
 url: >-
   https://raw.githubusercontent.com/api-search/google-cloud-dns/refs/heads/main/apis.yml
 created: '2026-03-13'
-modified: '2026-03-13'
-specificationVersion: '0.18'
+modified: '2026-03-16'
+specificationVersion: '0.19'
+type: Index
 tags:
   - Google Cloud
   - DNS
@@ -31,15 +33,35 @@ apis:
       - DNS Policies
       - Changes
     properties:
+      - type: Documentation
+        url: https://cloud.google.com/dns/docs/reference/v1
       - type: OpenAPI
         url: openapi/dns-openapi.yml
+      - type: Authentication
+        url: https://cloud.google.com/docs/authentication
+      - type: Getting Started
+        url: https://cloud.google.com/dns/docs/quickstart
       - type: JSONSchema
         url: json-schema/dns-managedzone.json
 common:
-  - type: GettingStarted
+  - type: Portal
+    url: https://cloud.google.com/dns
+  - type: Getting Started
     url: https://cloud.google.com/dns/docs/quickstart
+  - type: Documentation
+    url: https://cloud.google.com/dns/docs
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
   - type: Pricing
     url: https://cloud.google.com/dns/pricing
+  - type: Terms of Service
+    url: https://cloud.google.com/terms
+  - type: Privacy Policy
+    url: https://policies.google.com/privacy
+  - type: Status
+    url: https://status.cloud.google.com/
+  - type: Support
+    url: https://cloud.google.com/dns/docs/support
   - type: JSON-LD
     url: json-ld/dns-context.jsonld
 maintainers:
