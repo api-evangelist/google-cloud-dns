@@ -15,14 +15,14 @@ servers:
   - url: https://dns.googleapis.com/dns/v1
     description: Google Cloud DNS API v1
 tags:
-  - name: ManagedZones
-    description: Manage DNS zones
-  - name: ResourceRecordSets
-    description: Manage DNS resource record sets
   - name: Changes
     description: Manage DNS changes
+  - name: ManagedZones
+    description: Manage DNS zones
   - name: Policies
     description: Manage DNS policies
+  - name: ResourceRecordSets
+    description: Manage DNS resource record sets
 paths:
   /projects/{project}/managedZones:
     get:

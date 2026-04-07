@@ -13,11 +13,11 @@ modified: '2026-03-16'
 specificationVersion: '0.19'
 type: Index
 tags:
-  - Google Cloud
   - DNS
   - Domain Names
-  - Networking
+  - Google Cloud
   - Name Resolution
+  - Networking
 apis:
   - name: Google Cloud DNS API
     description: >-
@@ -28,10 +28,10 @@ apis:
     humanURL: https://cloud.google.com/dns/docs/reference/v1
     baseURL: https://dns.googleapis.com
     tags:
+      - Changes
+      - DNS Policies
       - Managed Zones
       - Resource Record Sets
-      - DNS Policies
-      - Changes
     properties:
       - type: Documentation
         url: https://cloud.google.com/dns/docs/reference/v1
