@@ -27,7 +27,7 @@ paths:
   /projects/{project}/managedZones:
     get:
       operationId: listManagedZones
-      summary: List Managed Zones
+      summary: Google Cloud DNS List Managed Zones
       description: Enumerates managed zones that have been created.
       tags:
         - ManagedZones
@@ -61,7 +61,7 @@ paths:
                     type: string
     post:
       operationId: createManagedZone
-      summary: Create Managed Zone
+      summary: Google Cloud DNS Create Managed Zone
       description: Creates a new managed zone.
       tags:
         - ManagedZones
@@ -86,7 +86,7 @@ paths:
   /projects/{project}/managedZones/{managedZone}:
     get:
       operationId: getManagedZone
-      summary: Get Managed Zone
+      summary: Google Cloud DNS Get Managed Zone
       description: Fetches the representation of an existing managed zone.
       tags:
         - ManagedZones
@@ -110,7 +110,7 @@ paths:
                 $ref: '#/components/schemas/ManagedZone'
     patch:
       operationId: patchManagedZone
-      summary: Update Managed Zone
+      summary: Google Cloud DNS Update Managed Zone
       description: Applies a partial update to an existing managed zone.
       tags:
         - ManagedZones
@@ -139,7 +139,7 @@ paths:
                 $ref: '#/components/schemas/Operation'
     delete:
       operationId: deleteManagedZone
-      summary: Delete Managed Zone
+      summary: Google Cloud DNS Delete Managed Zone
       description: Deletes a previously created managed zone.
       tags:
         - ManagedZones
@@ -160,7 +160,7 @@ paths:
   /projects/{project}/managedZones/{managedZone}/rrsets:
     get:
       operationId: listResourceRecordSets
-      summary: List Resource Record Sets
+      summary: Google Cloud DNS List Resource Record Sets
       description: Enumerates resource record sets that are associated with the managed zone.
       tags:
         - ResourceRecordSets
@@ -199,7 +199,7 @@ paths:
                     type: string
     post:
       operationId: createResourceRecordSet
-      summary: Create Resource Record Set
+      summary: Google Cloud DNS Create Resource Record Set
       description: Creates a new resource record set.
       tags:
         - ResourceRecordSets
@@ -229,7 +229,7 @@ paths:
   /projects/{project}/managedZones/{managedZone}/changes:
     get:
       operationId: listChanges
-      summary: List Changes
+      summary: Google Cloud DNS List Changes
       description: Enumerates changes to a managed zone.
       tags:
         - Changes
@@ -260,7 +260,7 @@ paths:
                     type: string
     post:
       operationId: createChange
-      summary: Create Change
+      summary: Google Cloud DNS Create Change
       description: Atomically updates the resource record set collection.
       tags:
         - Changes
@@ -290,7 +290,7 @@ paths:
   /projects/{project}/policies:
     get:
       operationId: listPolicies
-      summary: List Policies
+      summary: Google Cloud DNS List Policies
       description: Enumerates all policies associated with a project.
       tags:
         - Policies
