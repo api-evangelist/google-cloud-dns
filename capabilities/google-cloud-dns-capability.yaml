@@ -1,0 +1,571 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud DNS API
+  description: Manages DNS zones and resource record sets on Google Cloud, including creating managed zones, configuring DNS
+    records, and managing DNS policies.
+  tags:
+  - Google
+  - Cloud
+  - Dns
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-cloud-dns
+    baseUri: https://dns.googleapis.com/dns/v1
+    description: Google Cloud DNS API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{GOOGLE_CLOUD_DNS_TOKEN}}'
+    resources:
+    - name: projects-project-managedzones
+      path: /projects/{project}/managedZones
+      operations:
+      - name: listmanagedzones
+        method: GET
+        description: Google Cloud DNS List Managed Zones
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: maxResults
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createmanagedzone
+        method: POST
+        description: Google Cloud DNS Create Managed Zone
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-project-managedzones-managedzone
+      path: /projects/{project}/managedZones/{managedZone}
+      operations:
+      - name: getmanagedzone
+        method: GET
+        description: Google Cloud DNS Get Managed Zone
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: managedZone
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: patchmanagedzone
+        method: PATCH
+        description: Google Cloud DNS Update Managed Zone
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: managedZone
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletemanagedzone
+        method: DELETE
+        description: Google Cloud DNS Delete Managed Zone
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: managedZone
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-project-managedzones-managedzone-rrsets
+      path: /projects/{project}/managedZones/{managedZone}/rrsets
+      operations:
+      - name: listresourcerecordsets
+        method: GET
+        description: Google Cloud DNS List Resource Record Sets
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: managedZone
+          in: path
+          type: string
+          required: true
+        - name: name
+          in: query
+          type: string
+        - name: type
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createresourcerecordset
+        method: POST
+        description: Google Cloud DNS Create Resource Record Set
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: managedZone
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-project-managedzones-managedzone-change
+      path: /projects/{project}/managedZones/{managedZone}/changes
+      operations:
+      - name: listchanges
+        method: GET
+        description: Google Cloud DNS List Changes
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: managedZone
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createchange
+        method: POST
+        description: Google Cloud DNS Create Change
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: managedZone
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: projects-project-policies
+      path: /projects/{project}/policies
+      operations:
+      - name: listpolicies
+        method: GET
+        description: Google Cloud DNS List Policies
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-cloud-dns-rest
+    description: REST adapter for Google Cloud DNS API.
+    resources:
+    - path: /projects/{project}/managedZones
+      name: listmanagedzones
+      operations:
+      - method: GET
+        name: listmanagedzones
+        description: Google Cloud DNS List Managed Zones
+        call: google-cloud-dns.listmanagedzones
+        with:
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/managedZones
+      name: createmanagedzone
+      operations:
+      - method: POST
+        name: createmanagedzone
+        description: Google Cloud DNS Create Managed Zone
+        call: google-cloud-dns.createmanagedzone
+        with:
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/managedZones/{managedZone}
+      name: getmanagedzone
+      operations:
+      - method: GET
+        name: getmanagedzone
+        description: Google Cloud DNS Get Managed Zone
+        call: google-cloud-dns.getmanagedzone
+        with:
+          project: rest.project
+          managedZone: rest.managedZone
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/managedZones/{managedZone}
+      name: patchmanagedzone
+      operations:
+      - method: PATCH
+        name: patchmanagedzone
+        description: Google Cloud DNS Update Managed Zone
+        call: google-cloud-dns.patchmanagedzone
+        with:
+          project: rest.project
+          managedZone: rest.managedZone
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/managedZones/{managedZone}
+      name: deletemanagedzone
+      operations:
+      - method: DELETE
+        name: deletemanagedzone
+        description: Google Cloud DNS Delete Managed Zone
+        call: google-cloud-dns.deletemanagedzone
+        with:
+          project: rest.project
+          managedZone: rest.managedZone
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/managedZones/{managedZone}/rrsets
+      name: listresourcerecordsets
+      operations:
+      - method: GET
+        name: listresourcerecordsets
+        description: Google Cloud DNS List Resource Record Sets
+        call: google-cloud-dns.listresourcerecordsets
+        with:
+          project: rest.project
+          managedZone: rest.managedZone
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/managedZones/{managedZone}/rrsets
+      name: createresourcerecordset
+      operations:
+      - method: POST
+        name: createresourcerecordset
+        description: Google Cloud DNS Create Resource Record Set
+        call: google-cloud-dns.createresourcerecordset
+        with:
+          project: rest.project
+          managedZone: rest.managedZone
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/managedZones/{managedZone}/changes
+      name: listchanges
+      operations:
+      - method: GET
+        name: listchanges
+        description: Google Cloud DNS List Changes
+        call: google-cloud-dns.listchanges
+        with:
+          project: rest.project
+          managedZone: rest.managedZone
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/managedZones/{managedZone}/changes
+      name: createchange
+      operations:
+      - method: POST
+        name: createchange
+        description: Google Cloud DNS Create Change
+        call: google-cloud-dns.createchange
+        with:
+          project: rest.project
+          managedZone: rest.managedZone
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /projects/{project}/policies
+      name: listpolicies
+      operations:
+      - method: GET
+        name: listpolicies
+        description: Google Cloud DNS List Policies
+        call: google-cloud-dns.listpolicies
+        with:
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-cloud-dns-mcp
+    transport: http
+    description: MCP adapter for Google Cloud DNS API for AI agent use.
+    tools:
+    - name: listmanagedzones
+      description: Google Cloud DNS List Managed Zones
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-dns.listmanagedzones
+      with:
+        project: tools.project
+        maxResults: tools.maxResults
+        pageToken: tools.pageToken
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: maxResults
+        type: integer
+        description: maxResults
+      - name: pageToken
+        type: string
+        description: pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createmanagedzone
+      description: Google Cloud DNS Create Managed Zone
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-dns.createmanagedzone
+      with:
+        project: tools.project
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getmanagedzone
+      description: Google Cloud DNS Get Managed Zone
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-dns.getmanagedzone
+      with:
+        project: tools.project
+        managedZone: tools.managedZone
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: managedZone
+        type: string
+        description: managedZone
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: patchmanagedzone
+      description: Google Cloud DNS Update Managed Zone
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-dns.patchmanagedzone
+      with:
+        project: tools.project
+        managedZone: tools.managedZone
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: managedZone
+        type: string
+        description: managedZone
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletemanagedzone
+      description: Google Cloud DNS Delete Managed Zone
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-cloud-dns.deletemanagedzone
+      with:
+        project: tools.project
+        managedZone: tools.managedZone
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: managedZone
+        type: string
+        description: managedZone
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listresourcerecordsets
+      description: Google Cloud DNS List Resource Record Sets
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-dns.listresourcerecordsets
+      with:
+        project: tools.project
+        managedZone: tools.managedZone
+        name: tools.name
+        type: tools.type
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: managedZone
+        type: string
+        description: managedZone
+        required: true
+      - name: name
+        type: string
+        description: name
+      - name: type
+        type: string
+        description: type
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createresourcerecordset
+      description: Google Cloud DNS Create Resource Record Set
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-dns.createresourcerecordset
+      with:
+        project: tools.project
+        managedZone: tools.managedZone
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: managedZone
+        type: string
+        description: managedZone
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listchanges
+      description: Google Cloud DNS List Changes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-dns.listchanges
+      with:
+        project: tools.project
+        managedZone: tools.managedZone
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: managedZone
+        type: string
+        description: managedZone
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createchange
+      description: Google Cloud DNS Create Change
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-cloud-dns.createchange
+      with:
+        project: tools.project
+        managedZone: tools.managedZone
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      - name: managedZone
+        type: string
+        description: managedZone
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listpolicies
+      description: Google Cloud DNS List Policies
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-cloud-dns.listpolicies
+      with:
+        project: tools.project
+      inputParameters:
+      - name: project
+        type: string
+        description: project
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_DNS_TOKEN: GOOGLE_CLOUD_DNS_TOKEN
