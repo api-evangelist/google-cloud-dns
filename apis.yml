@@ -39,14 +39,14 @@ apis:
         url: openapi/dns-openapi.yml
       - type: Authentication
         url: https://cloud.google.com/docs/authentication
-      - type: Getting Started
+      - type: GettingStarted
         url: https://cloud.google.com/dns/docs/quickstart
       - type: JSONSchema
         url: json-schema/dns-managedzone.json
 common:
   - type: Portal
     url: https://cloud.google.com/dns
-  - type: Getting Started
+  - type: GettingStarted
     url: https://cloud.google.com/dns/docs/quickstart
   - type: Documentation
     url: https://cloud.google.com/dns/docs
@@ -54,15 +54,15 @@ common:
     url: https://cloud.google.com/docs/authentication
   - type: Pricing
     url: https://cloud.google.com/dns/pricing
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://cloud.google.com/terms
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://policies.google.com/privacy
-  - type: Status
+  - type: StatusPage
     url: https://status.cloud.google.com/
   - type: Support
     url: https://cloud.google.com/dns/docs/support
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/dns-context.jsonld
   - type: Integrations
     url: https://cloud.google.com/marketplace
