@@ -1,0 +1,142 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud DNS API — ResourceRecordSets
+  description: 'Google Cloud DNS API — ResourceRecordSets. 2 operations. Lead operation: Google Cloud DNS List Resource Record
+    Sets. Self-contained Naftiko capability covering one Google Cloud Dns business surface.'
+  tags:
+  - Google Cloud Dns
+  - ResourceRecordSets
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_DNS_API_KEY: GOOGLE_CLOUD_DNS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: dns-resourcerecordsets
+    baseUri: https://dns.googleapis.com/dns/v1
+    description: Google Cloud DNS API — ResourceRecordSets business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-project-managedZones-managedZone-rrsets
+      path: /projects/{project}/managedZones/{managedZone}/rrsets
+      operations:
+      - name: listresourcerecordsets
+        method: GET
+        description: Google Cloud DNS List Resource Record Sets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: managedZone
+          in: path
+          type: string
+          required: true
+        - name: name
+          in: query
+          type: string
+        - name: type
+          in: query
+          type: string
+      - name: createresourcerecordset
+        method: POST
+        description: Google Cloud DNS Create Resource Record Set
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: managedZone
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_DNS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: dns-resourcerecordsets-rest
+    port: 8080
+    description: REST adapter for Google Cloud DNS API — ResourceRecordSets. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/projects/{project}/managedzones/{managedzone}/rrsets
+      name: projects-project-managedzones-managedzone-rrsets
+      description: REST surface for projects-project-managedZones-managedZone-rrsets.
+      operations:
+      - method: GET
+        name: listresourcerecordsets
+        description: Google Cloud DNS List Resource Record Sets
+        call: dns-resourcerecordsets.listresourcerecordsets
+        with:
+          project: rest.project
+          managedZone: rest.managedZone
+          name: rest.name
+          type: rest.type
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createresourcerecordset
+        description: Google Cloud DNS Create Resource Record Set
+        call: dns-resourcerecordsets.createresourcerecordset
+        with:
+          project: rest.project
+          managedZone: rest.managedZone
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: dns-resourcerecordsets-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud DNS API — ResourceRecordSets. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: google-cloud-dns-list-resource
+      description: Google Cloud DNS List Resource Record Sets
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: dns-resourcerecordsets.listresourcerecordsets
+      with:
+        project: tools.project
+        managedZone: tools.managedZone
+        name: tools.name
+        type: tools.type
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-dns-create-resource
+      description: Google Cloud DNS Create Resource Record Set
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dns-resourcerecordsets.createresourcerecordset
+      with:
+        project: tools.project
+        managedZone: tools.managedZone
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

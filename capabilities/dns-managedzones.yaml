@@ -1,0 +1,264 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud DNS API — ManagedZones
+  description: 'Google Cloud DNS API — ManagedZones. 5 operations. Lead operation: Google Cloud DNS List Managed Zones. Self-contained
+    Naftiko capability covering one Google Cloud Dns business surface.'
+  tags:
+  - Google Cloud Dns
+  - ManagedZones
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_DNS_API_KEY: GOOGLE_CLOUD_DNS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: dns-managedzones
+    baseUri: https://dns.googleapis.com/dns/v1
+    description: Google Cloud DNS API — ManagedZones business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-project-managedZones
+      path: /projects/{project}/managedZones
+      operations:
+      - name: listmanagedzones
+        method: GET
+        description: Google Cloud DNS List Managed Zones
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: maxResults
+          in: query
+          type: integer
+        - name: pageToken
+          in: query
+          type: string
+      - name: createmanagedzone
+        method: POST
+        description: Google Cloud DNS Create Managed Zone
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    - name: projects-project-managedZones-managedZone
+      path: /projects/{project}/managedZones/{managedZone}
+      operations:
+      - name: getmanagedzone
+        method: GET
+        description: Google Cloud DNS Get Managed Zone
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: managedZone
+          in: path
+          type: string
+          required: true
+      - name: patchmanagedzone
+        method: PATCH
+        description: Google Cloud DNS Update Managed Zone
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: managedZone
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+      - name: deletemanagedzone
+        method: DELETE
+        description: Google Cloud DNS Delete Managed Zone
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+        - name: managedZone
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_DNS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: dns-managedzones-rest
+    port: 8080
+    description: REST adapter for Google Cloud DNS API — ManagedZones. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/projects/{project}/managedzones
+      name: projects-project-managedzones
+      description: REST surface for projects-project-managedZones.
+      operations:
+      - method: GET
+        name: listmanagedzones
+        description: Google Cloud DNS List Managed Zones
+        call: dns-managedzones.listmanagedzones
+        with:
+          project: rest.project
+          maxResults: rest.maxResults
+          pageToken: rest.pageToken
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createmanagedzone
+        description: Google Cloud DNS Create Managed Zone
+        call: dns-managedzones.createmanagedzone
+        with:
+          project: rest.project
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/projects/{project}/managedzones/{managedzone}
+      name: projects-project-managedzones-managedzone
+      description: REST surface for projects-project-managedZones-managedZone.
+      operations:
+      - method: GET
+        name: getmanagedzone
+        description: Google Cloud DNS Get Managed Zone
+        call: dns-managedzones.getmanagedzone
+        with:
+          project: rest.project
+          managedZone: rest.managedZone
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: patchmanagedzone
+        description: Google Cloud DNS Update Managed Zone
+        call: dns-managedzones.patchmanagedzone
+        with:
+          project: rest.project
+          managedZone: rest.managedZone
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletemanagedzone
+        description: Google Cloud DNS Delete Managed Zone
+        call: dns-managedzones.deletemanagedzone
+        with:
+          project: rest.project
+          managedZone: rest.managedZone
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: dns-managedzones-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud DNS API — ManagedZones. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: google-cloud-dns-list-managed
+      description: Google Cloud DNS List Managed Zones
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: dns-managedzones.listmanagedzones
+      with:
+        project: tools.project
+        maxResults: tools.maxResults
+        pageToken: tools.pageToken
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-dns-create-managed
+      description: Google Cloud DNS Create Managed Zone
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: dns-managedzones.createmanagedzone
+      with:
+        project: tools.project
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-dns-get-managed
+      description: Google Cloud DNS Get Managed Zone
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: dns-managedzones.getmanagedzone
+      with:
+        project: tools.project
+        managedZone: tools.managedZone
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-dns-update-managed
+      description: Google Cloud DNS Update Managed Zone
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: dns-managedzones.patchmanagedzone
+      with:
+        project: tools.project
+        managedZone: tools.managedZone
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-cloud-dns-delete-managed
+      description: Google Cloud DNS Delete Managed Zone
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: dns-managedzones.deletemanagedzone
+      with:
+        project: tools.project
+        managedZone: tools.managedZone
+      outputParameters:
+      - type: object
+        mapping: $.

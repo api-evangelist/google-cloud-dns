@@ -1,0 +1,79 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Cloud DNS API — Policies
+  description: 'Google Cloud DNS API — Policies. 1 operations. Lead operation: Google Cloud DNS List Policies. Self-contained
+    Naftiko capability covering one Google Cloud Dns business surface.'
+  tags:
+  - Google Cloud Dns
+  - Policies
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_CLOUD_DNS_API_KEY: GOOGLE_CLOUD_DNS_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: dns-policies
+    baseUri: https://dns.googleapis.com/dns/v1
+    description: Google Cloud DNS API — Policies business capability. Self-contained, no shared references.
+    resources:
+    - name: projects-project-policies
+      path: /projects/{project}/policies
+      operations:
+      - name: listpolicies
+        method: GET
+        description: Google Cloud DNS List Policies
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: project
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_CLOUD_DNS_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: dns-policies-rest
+    port: 8080
+    description: REST adapter for Google Cloud DNS API — Policies. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/projects/{project}/policies
+      name: projects-project-policies
+      description: REST surface for projects-project-policies.
+      operations:
+      - method: GET
+        name: listpolicies
+        description: Google Cloud DNS List Policies
+        call: dns-policies.listpolicies
+        with:
+          project: rest.project
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: dns-policies-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Google Cloud DNS API — Policies. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: google-cloud-dns-list-policies
+      description: Google Cloud DNS List Policies
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: dns-policies.listpolicies
+      with:
+        project: tools.project
+      outputParameters:
+      - type: object
+        mapping: $.
