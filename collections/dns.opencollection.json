@@ -1,0 +1,305 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Cloud DNS API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ManagedZones",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud DNS List Managed Zones",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dns.googleapis.com/dns/v1/projects/:project/managedZones",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "maxResults",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pageToken",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Enumerates managed zones that have been created."
+        },
+        {
+          "info": {
+            "name": "Google Cloud DNS Create Managed Zone",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dns.googleapis.com/dns/v1/projects/:project/managedZones",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new managed zone."
+        },
+        {
+          "info": {
+            "name": "Google Cloud DNS Get Managed Zone",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dns.googleapis.com/dns/v1/projects/:project/managedZones/:managedZone",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "managedZone",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Fetches the representation of an existing managed zone."
+        },
+        {
+          "info": {
+            "name": "Google Cloud DNS Update Managed Zone",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://dns.googleapis.com/dns/v1/projects/:project/managedZones/:managedZone",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "managedZone",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Applies a partial update to an existing managed zone."
+        },
+        {
+          "info": {
+            "name": "Google Cloud DNS Delete Managed Zone",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://dns.googleapis.com/dns/v1/projects/:project/managedZones/:managedZone",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "managedZone",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a previously created managed zone."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ResourceRecordSets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud DNS List Resource Record Sets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dns.googleapis.com/dns/v1/projects/:project/managedZones/:managedZone/rrsets",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "managedZone",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Enumerates resource record sets that are associated with the managed zone."
+        },
+        {
+          "info": {
+            "name": "Google Cloud DNS Create Resource Record Set",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dns.googleapis.com/dns/v1/projects/:project/managedZones/:managedZone/rrsets",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "managedZone",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new resource record set."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Changes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud DNS List Changes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dns.googleapis.com/dns/v1/projects/:project/managedZones/:managedZone/changes",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "managedZone",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Enumerates changes to a managed zone."
+        },
+        {
+          "info": {
+            "name": "Google Cloud DNS Create Change",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://dns.googleapis.com/dns/v1/projects/:project/managedZones/:managedZone/changes",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "managedZone",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Atomically updates the resource record set collection."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Policies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Cloud DNS List Policies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://dns.googleapis.com/dns/v1/projects/:project/policies",
+            "params": [
+              {
+                "name": "project",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Enumerates all policies associated with a project."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

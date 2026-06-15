@@ -1,0 +1,1300 @@
+{
+  "item": [
+    {
+      "id": "30c74175-9411-4f97-ba05-38dd01ca2758",
+      "name": "Changes",
+      "description": {
+        "content": "Manage DNS changes",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "87806671-ab39-4925-89a5-f287b20cfb9e",
+          "name": "Google Cloud DNS List Changes",
+          "request": {
+            "name": "Google Cloud DNS List Changes",
+            "description": {
+              "content": "Enumerates changes to a managed zone.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "managedZones",
+                ":managedZone",
+                "changes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "managedZone",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c7e3efd0-f497-46d8-8ab1-db35b3f3cf2d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "managedZones",
+                    ":managedZone",
+                    "changes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "managedZone",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"changes\": [\n    {\n      \"id\": \"string\",\n      \"status\": \"done\",\n      \"startTime\": \"2019-05-24T17:28:06.072Z\",\n      \"additions\": [\n        {\n          \"name\": \"string\",\n          \"type\": \"A\",\n          \"ttl\": 6141,\n          \"rrdatas\": [\n            \"string\",\n            \"string\"\n          ],\n          \"signatureRrdatas\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"name\": \"string\",\n          \"type\": \"TXT\",\n          \"ttl\": 1769,\n          \"rrdatas\": [\n            \"string\",\n            \"string\"\n          ],\n          \"signatureRrdatas\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"deletions\": [\n        {\n          \"name\": \"string\",\n          \"type\": \"AAAA\",\n          \"ttl\": 5284,\n          \"rrdatas\": [\n            \"string\",\n            \"string\"\n          ],\n          \"signatureRrdatas\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"name\": \"string\",\n          \"type\": \"CNAME\",\n          \"ttl\": 9911,\n          \"rrdatas\": [\n            \"string\",\n            \"string\"\n          ],\n          \"signatureRrdatas\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ]\n    },\n    {\n      \"id\": \"string\",\n      \"status\": \"done\",\n      \"startTime\": \"1974-02-20T00:26:10.590Z\",\n      \"additions\": [\n        {\n          \"name\": \"string\",\n          \"type\": \"MX\",\n          \"ttl\": 6981,\n          \"rrdatas\": [\n            \"string\",\n            \"string\"\n          ],\n          \"signatureRrdatas\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"name\": \"string\",\n          \"type\": \"AAAA\",\n          \"ttl\": 5144,\n          \"rrdatas\": [\n            \"string\",\n            \"string\"\n          ],\n          \"signatureRrdatas\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"deletions\": [\n        {\n          \"name\": \"string\",\n          \"type\": \"MX\",\n          \"ttl\": 1079,\n          \"rrdatas\": [\n            \"string\",\n            \"string\"\n          ],\n          \"signatureRrdatas\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"name\": \"string\",\n          \"type\": \"SOA\",\n          \"ttl\": 7518,\n          \"rrdatas\": [\n            \"string\",\n            \"string\"\n          ],\n          \"signatureRrdatas\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ]\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "11c1446c-f4ac-4e2a-add2-5f491e58c820",
+          "name": "Google Cloud DNS Create Change",
+          "request": {
+            "name": "Google Cloud DNS Create Change",
+            "description": {
+              "content": "Atomically updates the resource record set collection.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "managedZones",
+                ":managedZone",
+                "changes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "managedZone",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"additions\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"deletions\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "895f75d7-6d80-45bc-b6c6-b70eb4f7b513",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "managedZones",
+                    ":managedZone",
+                    "changes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "managedZone",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"status\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"additions\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"TXT\",\n      \"ttl\": 7039,\n      \"rrdatas\": [\n        \"string\",\n        \"string\"\n      ],\n      \"signatureRrdatas\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"SRV\",\n      \"ttl\": 8269,\n      \"rrdatas\": [\n        \"string\",\n        \"string\"\n      ],\n      \"signatureRrdatas\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"deletions\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"A\",\n      \"ttl\": 9570,\n      \"rrdatas\": [\n        \"string\",\n        \"string\"\n      ],\n      \"signatureRrdatas\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"A\",\n      \"ttl\": 7808,\n      \"rrdatas\": [\n        \"string\",\n        \"string\"\n      ],\n      \"signatureRrdatas\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"status\": \"pending\",\n  \"startTime\": \"2024-06-01T16:56:12.463Z\",\n  \"additions\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"TXT\",\n      \"ttl\": 9474,\n      \"rrdatas\": [\n        \"string\",\n        \"string\"\n      ],\n      \"signatureRrdatas\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"SOA\",\n      \"ttl\": 3637,\n      \"rrdatas\": [\n        \"string\",\n        \"string\"\n      ],\n      \"signatureRrdatas\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"deletions\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"SRV\",\n      \"ttl\": 8576,\n      \"rrdatas\": [\n        \"string\",\n        \"string\"\n      ],\n      \"signatureRrdatas\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"SRV\",\n      \"ttl\": 4831,\n      \"rrdatas\": [\n        \"string\",\n        \"string\"\n      ],\n      \"signatureRrdatas\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "9306fb03-3065-4e87-87cf-85020a64460a",
+      "name": "ManagedZones",
+      "description": {
+        "content": "Manage DNS zones",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b0e8a913-bc8f-48bd-bcd3-5e349e621249",
+          "name": "Google Cloud DNS List Managed Zones",
+          "request": {
+            "name": "Google Cloud DNS List Managed Zones",
+            "description": {
+              "content": "Enumerates managed zones that have been created.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "managedZones"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "pageToken",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7cef0580-417d-48ea-b717-48d1ceeafac8",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "managedZones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maxResults",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "pageToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"managedZones\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"dnsName\": \"string\",\n      \"description\": \"string\",\n      \"nameServers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"visibility\": \"public\",\n      \"dnssecConfig\": {\n        \"state\": \"off\",\n        \"kind\": \"string\"\n      },\n      \"creationTime\": \"1986-10-11T22:51:22.450Z\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"dnsName\": \"string\",\n      \"description\": \"string\",\n      \"nameServers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"visibility\": \"public\",\n      \"dnssecConfig\": {\n        \"state\": \"off\",\n        \"kind\": \"string\"\n      },\n      \"creationTime\": \"2008-12-20T15:40:54.802Z\"\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e670cea-5bf6-4012-91f7-712b23f7f89d",
+          "name": "Google Cloud DNS Create Managed Zone",
+          "request": {
+            "name": "Google Cloud DNS Create Managed Zone",
+            "description": {
+              "content": "Creates a new managed zone.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "managedZones"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"dnsName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"nameServers\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"visibility\": \"<string>\",\n  \"dnssecConfig\": {\n    \"state\": \"<string>\",\n    \"kind\": \"<string>\"\n  },\n  \"creationTime\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6f5ac5f2-b175-40cd-82ab-0fe12c3806ec",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "managedZones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"dnsName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"nameServers\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"visibility\": \"<string>\",\n  \"dnssecConfig\": {\n    \"state\": \"<string>\",\n    \"kind\": \"<string>\"\n  },\n  \"creationTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"dnsName\": \"string\",\n  \"description\": \"string\",\n  \"nameServers\": [\n    \"string\",\n    \"string\"\n  ],\n  \"visibility\": \"private\",\n  \"dnssecConfig\": {\n    \"state\": \"off\",\n    \"kind\": \"string\"\n  },\n  \"creationTime\": \"2010-11-17T08:16:46.136Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b2dfc1de-b443-4126-9d35-afc26431fafe",
+          "name": "Google Cloud DNS Get Managed Zone",
+          "request": {
+            "name": "Google Cloud DNS Get Managed Zone",
+            "description": {
+              "content": "Fetches the representation of an existing managed zone.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "managedZones",
+                ":managedZone"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "managedZone",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5f53db50-3716-4e22-aacc-5a99962a188e",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "managedZones",
+                    ":managedZone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "managedZone",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"dnsName\": \"string\",\n  \"description\": \"string\",\n  \"nameServers\": [\n    \"string\",\n    \"string\"\n  ],\n  \"visibility\": \"private\",\n  \"dnssecConfig\": {\n    \"state\": \"off\",\n    \"kind\": \"string\"\n  },\n  \"creationTime\": \"2010-11-17T08:16:46.136Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d65aa102-3b4b-4bc8-869b-c622010803e8",
+          "name": "Google Cloud DNS Update Managed Zone",
+          "request": {
+            "name": "Google Cloud DNS Update Managed Zone",
+            "description": {
+              "content": "Applies a partial update to an existing managed zone.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "managedZones",
+                ":managedZone"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "managedZone",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"dnsName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"nameServers\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"visibility\": \"<string>\",\n  \"dnssecConfig\": {\n    \"state\": \"<string>\",\n    \"kind\": \"<string>\"\n  },\n  \"creationTime\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "77443833-6379-48fc-8abd-ada951676b81",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "managedZones",
+                    ":managedZone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "managedZone",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"dnsName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"nameServers\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"visibility\": \"<string>\",\n  \"dnssecConfig\": {\n    \"state\": \"<string>\",\n    \"kind\": \"<string>\"\n  },\n  \"creationTime\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"status\": \"string\",\n  \"dnsKeyContext\": {},\n  \"zoneContext\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7e022be-e24d-4f71-8588-b9216f385912",
+          "name": "Google Cloud DNS Delete Managed Zone",
+          "request": {
+            "name": "Google Cloud DNS Delete Managed Zone",
+            "description": {
+              "content": "Deletes a previously created managed zone.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "managedZones",
+                ":managedZone"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "managedZone",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3c8af841-fb5c-4725-bb34-fc245d9b7843",
+              "name": "Successful deletion",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "managedZones",
+                    ":managedZone"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "managedZone",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "1d939d7a-c2d0-4916-9a32-e30925e02e88",
+      "name": "Policies",
+      "description": {
+        "content": "Manage DNS policies",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "15c085e6-1e4c-40de-b004-37dda1dca06c",
+          "name": "Google Cloud DNS List Policies",
+          "request": {
+            "name": "Google Cloud DNS List Policies",
+            "description": {
+              "content": "Enumerates all policies associated with a project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "policies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f8809382-ced1-47ac-b543-3c12fd936819",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "policies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"policies\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"enableInboundForwarding\": false,\n      \"enableLogging\": false,\n      \"networks\": [\n        {\n          \"networkUrl\": \"string\"\n        },\n        {\n          \"networkUrl\": \"string\"\n        }\n      ],\n      \"alternativeNameServerConfig\": {\n        \"targetNameServers\": [\n          {\n            \"ipv4Address\": \"string\",\n            \"forwardingPath\": \"string\"\n          },\n          {\n            \"ipv4Address\": \"string\",\n            \"forwardingPath\": \"string\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"enableInboundForwarding\": true,\n      \"enableLogging\": false,\n      \"networks\": [\n        {\n          \"networkUrl\": \"string\"\n        },\n        {\n          \"networkUrl\": \"string\"\n        }\n      ],\n      \"alternativeNameServerConfig\": {\n        \"targetNameServers\": [\n          {\n            \"ipv4Address\": \"string\",\n            \"forwardingPath\": \"string\"\n          },\n          {\n            \"ipv4Address\": \"string\",\n            \"forwardingPath\": \"string\"\n          }\n        ]\n      }\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "87a9af1f-c8db-4488-9962-75234a615fd9",
+      "name": "ResourceRecordSets",
+      "description": {
+        "content": "Manage DNS resource record sets",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f44debdb-bb1b-45d1-9d6f-818969f15209",
+          "name": "Google Cloud DNS List Resource Record Sets",
+          "request": {
+            "name": "Google Cloud DNS List Resource Record Sets",
+            "description": {
+              "content": "Enumerates resource record sets that are associated with the managed zone.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "managedZones",
+                ":managedZone",
+                "rrsets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "managedZone",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b75d712f-0489-4579-9a9b-f7600ec002ac",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "managedZones",
+                    ":managedZone",
+                    "rrsets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "managedZone",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"rrsets\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"CNAME\",\n      \"ttl\": 6777,\n      \"rrdatas\": [\n        \"string\",\n        \"string\"\n      ],\n      \"signatureRrdatas\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"CNAME\",\n      \"ttl\": 9861,\n      \"rrdatas\": [\n        \"string\",\n        \"string\"\n      ],\n      \"signatureRrdatas\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e10d4b3-b036-48b5-83ac-04aa9001d9f4",
+          "name": "Google Cloud DNS Create Resource Record Set",
+          "request": {
+            "name": "Google Cloud DNS Create Resource Record Set",
+            "description": {
+              "content": "Creates a new resource record set.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "managedZones",
+                ":managedZone",
+                "rrsets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "managedZone",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"ttl\": \"<integer>\",\n  \"rrdatas\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"signatureRrdatas\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "18e5542b-c2c2-4adf-b963-cb0b0bed2e78",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "managedZones",
+                    ":managedZone",
+                    "rrsets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "managedZone",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"ttl\": \"<integer>\",\n  \"rrdatas\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"signatureRrdatas\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"type\": \"SOA\",\n  \"ttl\": 3785,\n  \"rrdatas\": [\n    \"string\",\n    \"string\"\n  ],\n  \"signatureRrdatas\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dns.googleapis.com/dns/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/ndev.clouddns.readwrite https://www.googleapis.com/auth/cloud-platform"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ae08644f-bfe7-4c39-a04f-9115224bf965",
+    "name": "Google Cloud DNS API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Manages DNS zones and resource record sets on Google Cloud, including creating managed zones, configuring DNS records, and managing DNS policies.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}
