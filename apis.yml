@@ -41,6 +41,8 @@ apis:
       - type: JSONSchema
         url: json-schema/dns-managedzone.json
 common:
+  - type: OAuthScopes
+    url: scopes/google-cloud-dns-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/googleapis
   - type: Portal
