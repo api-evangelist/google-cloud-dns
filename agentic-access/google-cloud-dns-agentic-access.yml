@@ -1,0 +1,166 @@
+generated: '2026-07-15'
+method: generated
+source: openapi/dns-openapi.yml
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 10
+  by_action_class:
+    connected: 5
+    acting: 5
+  by_consequence:
+    read: 5
+    write: 5
+  human_in_the_loop_required: 0
+operations:
+- path: /projects/{project}/managedZones
+  method: get
+  operationId: listManagedZones
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - https://www.googleapis.com/auth/ndev.clouddns.readwrite
+- path: /projects/{project}/managedZones
+  method: post
+  operationId: createManagedZone
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - https://www.googleapis.com/auth/ndev.clouddns.readwrite
+- path: /projects/{project}/managedZones/{managedZone}
+  method: get
+  operationId: getManagedZone
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - https://www.googleapis.com/auth/ndev.clouddns.readwrite
+- path: /projects/{project}/managedZones/{managedZone}
+  method: patch
+  operationId: patchManagedZone
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - https://www.googleapis.com/auth/ndev.clouddns.readwrite
+- path: /projects/{project}/managedZones/{managedZone}
+  method: delete
+  operationId: deleteManagedZone
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - https://www.googleapis.com/auth/ndev.clouddns.readwrite
+- path: /projects/{project}/managedZones/{managedZone}/rrsets
+  method: get
+  operationId: listResourceRecordSets
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - https://www.googleapis.com/auth/ndev.clouddns.readwrite
+- path: /projects/{project}/managedZones/{managedZone}/rrsets
+  method: post
+  operationId: createResourceRecordSet
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - https://www.googleapis.com/auth/ndev.clouddns.readwrite
+- path: /projects/{project}/managedZones/{managedZone}/changes
+  method: get
+  operationId: listChanges
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - https://www.googleapis.com/auth/ndev.clouddns.readwrite
+- path: /projects/{project}/managedZones/{managedZone}/changes
+  method: post
+  operationId: createChange
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+    scope:
+    - https://www.googleapis.com/auth/ndev.clouddns.readwrite
+- path: /projects/{project}/policies
+  method: get
+  operationId: listPolicies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+    scope:
+    - https://www.googleapis.com/auth/ndev.clouddns.readwrite
