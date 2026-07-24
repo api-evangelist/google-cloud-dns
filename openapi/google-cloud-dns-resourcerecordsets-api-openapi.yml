@@ -1,0 +1,130 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud DNS Changes ResourceRecordSets API
+  description: Manages DNS zones and resource record sets on Google Cloud, including creating managed zones, configuring DNS records, and managing DNS policies.
+  version: 1.0.0
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/dns
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://dns.googleapis.com/dns/v1
+  description: Google Cloud DNS API v1
+security:
+- oauth2:
+  - https://www.googleapis.com/auth/ndev.clouddns.readwrite
+tags:
+- name: ResourceRecordSets
+  description: Manage DNS resource record sets
+paths:
+  /projects/{project}/managedZones/{managedZone}/rrsets:
+    get:
+      operationId: listResourceRecordSets
+      summary: Google Cloud DNS List Resource Record Sets
+      description: Enumerates resource record sets that are associated with the managed zone.
+      tags:
+      - ResourceRecordSets
+      parameters:
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: managedZone
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: name
+        in: query
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  rrsets:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ResourceRecordSet'
+                  nextPageToken:
+                    type: string
+    post:
+      operationId: createResourceRecordSet
+      summary: Google Cloud DNS Create Resource Record Set
+      description: Creates a new resource record set.
+      tags:
+      - ResourceRecordSets
+      parameters:
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: managedZone
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResourceRecordSet'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceRecordSet'
+components:
+  schemas:
+    ResourceRecordSet:
+      type: object
+      properties:
+        name:
+          type: string
+        type:
+          type: string
+          enum:
+          - A
+          - AAAA
+          - CNAME
+          - MX
+          - NS
+          - SOA
+          - TXT
+          - SRV
+          - PTR
+          - CAA
+        ttl:
+          type: integer
+        rrdatas:
+          type: array
+          items:
+            type: string
+        signatureRrdatas:
+          type: array
+          items:
+            type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/ndev.clouddns.readwrite: Full access to Cloud DNS
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud Platform

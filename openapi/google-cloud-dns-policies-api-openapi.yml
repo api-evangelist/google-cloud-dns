@@ -1,0 +1,92 @@
+openapi: 3.1.0
+info:
+  title: Google Cloud DNS Changes Policies API
+  description: Manages DNS zones and resource record sets on Google Cloud, including creating managed zones, configuring DNS records, and managing DNS policies.
+  version: 1.0.0
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/dns
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://dns.googleapis.com/dns/v1
+  description: Google Cloud DNS API v1
+security:
+- oauth2:
+  - https://www.googleapis.com/auth/ndev.clouddns.readwrite
+tags:
+- name: Policies
+  description: Manage DNS policies
+paths:
+  /projects/{project}/policies:
+    get:
+      operationId: listPolicies
+      summary: Google Cloud DNS List Policies
+      description: Enumerates all policies associated with a project.
+      tags:
+      - Policies
+      parameters:
+      - name: project
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  policies:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Policy'
+                  nextPageToken:
+                    type: string
+components:
+  schemas:
+    Policy:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        enableInboundForwarding:
+          type: boolean
+        enableLogging:
+          type: boolean
+        networks:
+          type: array
+          items:
+            type: object
+            properties:
+              networkUrl:
+                type: string
+        alternativeNameServerConfig:
+          type: object
+          properties:
+            targetNameServers:
+              type: array
+              items:
+                type: object
+                properties:
+                  ipv4Address:
+                    type: string
+                  forwardingPath:
+                    type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/ndev.clouddns.readwrite: Full access to Cloud DNS
+            https://www.googleapis.com/auth/cloud-platform: Full access to Google Cloud Platform
