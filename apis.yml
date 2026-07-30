@@ -4,7 +4,20 @@ description: >-
   Google Cloud DNS is a scalable, reliable, and managed authoritative Domain Name System (DNS) service running on the
   same infrastructure as Google. It provides low-latency, high-availability DNS serving with 100% uptime SLA, supporting
   both public and private DNS zones for domain name resolution.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-cloud-dns.png
 url: https://raw.githubusercontent.com/api-search/google-cloud-dns/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -17,30 +30,81 @@ tags:
   - Name Resolution
   - Networking
 apis:
-  - name: Google Cloud DNS API
-    description: >-
-      The Cloud DNS API enables programmatic management of DNS zones and resource record sets, including creating and
-      configuring managed zones, adding and modifying DNS records, and managing DNS policies for private zones.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://cloud.google.com/dns/docs/reference/v1
-    baseURL: https://dns.googleapis.com
-    tags:
-      - Changes
-      - DNS Policies
-      - Managed Zones
-      - Resource Record Sets
-    properties:
-      - type: Documentation
-        url: https://cloud.google.com/dns/docs/reference/v1
-      - type: OpenAPI
-        url: openapi/dns-openapi.yml
-      - type: Authentication
-        url: https://cloud.google.com/docs/authentication
-      - type: GettingStarted
-        url: https://cloud.google.com/dns/docs/quickstart
-      - type: JSONSchema
-        url: json-schema/dns-managedzone.json
+- aid: google-cloud-dns:google-cloud-dns-changes-api
+  name: Google Cloud DNS Changes API
+  description: Manage DNS changes
+  humanURL: https://cloud.google.com/dns/docs/reference/v1
+  baseURL: https://dns.googleapis.com
+  tags:
+  - Changes
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-dns-changes-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/dns/docs/reference/v1
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/dns/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/dns-managedzone.json
+- aid: google-cloud-dns:google-cloud-dns-managedzones-api
+  name: Google Cloud DNS ManagedZones API
+  description: Manage DNS zones
+  humanURL: https://cloud.google.com/dns/docs/reference/v1
+  baseURL: https://dns.googleapis.com
+  tags:
+  - ManagedZones
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-dns-managedzones-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/dns/docs/reference/v1
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/dns/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/dns-managedzone.json
+- aid: google-cloud-dns:google-cloud-dns-policies-api
+  name: Google Cloud DNS Policies API
+  description: Manage DNS policies
+  humanURL: https://cloud.google.com/dns/docs/reference/v1
+  baseURL: https://dns.googleapis.com
+  tags:
+  - Policies
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-dns-policies-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/dns/docs/reference/v1
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/dns/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/dns-managedzone.json
+- aid: google-cloud-dns:google-cloud-dns-resourcerecordsets-api
+  name: Google Cloud DNS ResourceRecordSets API
+  description: Manage DNS resource record sets
+  humanURL: https://cloud.google.com/dns/docs/reference/v1
+  baseURL: https://dns.googleapis.com
+  tags:
+  - ResourceRecordSets
+  properties:
+  - type: OpenAPI
+    url: openapi/google-cloud-dns-resourcerecordsets-api-openapi.yml
+  - type: Documentation
+    url: https://cloud.google.com/dns/docs/reference/v1
+  - type: Authentication
+    url: https://cloud.google.com/docs/authentication
+  - type: GettingStarted
+    url: https://cloud.google.com/dns/docs/quickstart
+  - type: JSONSchema
+    url: json-schema/dns-managedzone.json
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-cloud-dns/overview
   - type: AgenticAccess
     url: agentic-access/google-cloud-dns-agentic-access.yml
   - type: VulnerabilityDisclosure
