@@ -1,0 +1,324 @@
+{
+  "info": {
+    "_postman_id": "b593f3a4-5c75-41d9-9e7a-d4283e0c9190",
+    "name": "Google Cloud DNS Changes API",
+    "description": "Manages DNS zones and resource record sets on Google Cloud, including creating managed zones, configuring DNS records, and managing DNS policies.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:47:23.000Z",
+    "updatedAt": "2026-07-28T01:47:23.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b593f3a4-5c75-41d9-9e7a-d4283e0c9190"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{project}",
+          "item": [
+            {
+              "name": "managedZones",
+              "item": [
+                {
+                  "name": "{managedZone}",
+                  "item": [
+                    {
+                      "name": "changes",
+                      "item": [
+                        {
+                          "name": "Google Cloud DNS List Changes",
+                          "id": "411d94f1-429e-4a89-949c-194d3d7cf0c0",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/managedZones/:managedZone/changes",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "managedZones",
+                                ":managedZone",
+                                "changes"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "143d2777-60b1-4826-8713-bcfca2a9ae72",
+                                  "key": "project",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "a22d6369-ef3f-423c-8def-88299341853e",
+                                  "key": "managedZone",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Enumerates changes to a managed zone."
+                          },
+                          "response": [
+                            {
+                              "id": "254797a6-a4bf-4f47-bce3-aa82f51fb639",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/managedZones/:managedZone/changes",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "managedZones",
+                                    ":managedZone",
+                                    "changes"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project"
+                                    },
+                                    {
+                                      "key": "managedZone"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"changes\": [\n    {\n      \"id\": \"<string>\",\n      \"status\": \"pending\",\n      \"startTime\": \"<dateTime>\",\n      \"additions\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"SRV\",\n          \"ttl\": \"<integer>\",\n          \"rrdatas\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"signatureRrdatas\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"CNAME\",\n          \"ttl\": \"<integer>\",\n          \"rrdatas\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"signatureRrdatas\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"deletions\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"A\",\n          \"ttl\": \"<integer>\",\n          \"rrdatas\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"signatureRrdatas\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"SOA\",\n          \"ttl\": \"<integer>\",\n          \"rrdatas\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"signatureRrdatas\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    },\n    {\n      \"id\": \"<string>\",\n      \"status\": \"done\",\n      \"startTime\": \"<dateTime>\",\n      \"additions\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"AAAA\",\n          \"ttl\": \"<integer>\",\n          \"rrdatas\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"signatureRrdatas\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"TXT\",\n          \"ttl\": \"<integer>\",\n          \"rrdatas\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"signatureRrdatas\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ],\n      \"deletions\": [\n        {\n          \"name\": \"<string>\",\n          \"type\": \"SOA\",\n          \"ttl\": \"<integer>\",\n          \"rrdatas\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"signatureRrdatas\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        },\n        {\n          \"name\": \"<string>\",\n          \"type\": \"TXT\",\n          \"ttl\": \"<integer>\",\n          \"rrdatas\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"signatureRrdatas\": [\n            \"<string>\",\n            \"<string>\"\n          ]\n        }\n      ]\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:47:24.000Z",
+                              "updatedAt": "2026-07-28T01:47:24.000Z",
+                              "uid": "35240-254797a6-a4bf-4f47-bce3-aa82f51fb639"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:47:24.000Z",
+                          "updatedAt": "2026-07-28T01:47:24.000Z",
+                          "uid": "35240-411d94f1-429e-4a89-949c-194d3d7cf0c0"
+                        },
+                        {
+                          "name": "Google Cloud DNS Create Change",
+                          "id": "8f49cccc-a188-40bb-ad82-9033000ba20d",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"id\": \"<string>\",\n  \"status\": \"pending\",\n  \"startTime\": \"<dateTime>\",\n  \"additions\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"CNAME\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"PTR\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"deletions\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"SRV\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"TXT\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/managedZones/:managedZone/changes",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "managedZones",
+                                ":managedZone",
+                                "changes"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "b29ee47c-2066-4438-b735-8d6ade0fea2b",
+                                  "key": "project",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "95954fbe-43fa-4164-a598-864b1f957ecc",
+                                  "key": "managedZone",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Atomically updates the resource record set collection."
+                          },
+                          "response": [
+                            {
+                              "id": "d50c417b-e121-498b-9481-857ebf1c72b6",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"id\": \"<string>\",\n  \"status\": \"pending\",\n  \"startTime\": \"<dateTime>\",\n  \"additions\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"CNAME\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"PTR\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"deletions\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"SRV\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"TXT\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/managedZones/:managedZone/changes",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "managedZones",
+                                    ":managedZone",
+                                    "changes"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project"
+                                    },
+                                    {
+                                      "key": "managedZone"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"id\": \"<string>\",\n  \"status\": \"pending\",\n  \"startTime\": \"<dateTime>\",\n  \"additions\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"CNAME\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"PTR\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"deletions\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"SRV\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"TXT\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T01:47:24.000Z",
+                              "updatedAt": "2026-07-28T01:47:24.000Z",
+                              "uid": "35240-d50c417b-e121-498b-9481-857ebf1c72b6"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:47:24.000Z",
+                          "updatedAt": "2026-07-28T01:47:24.000Z",
+                          "uid": "35240-8f49cccc-a188-40bb-ad82-9033000ba20d"
+                        }
+                      ],
+                      "id": "47eda9db-07b7-4f1e-a0f9-6b1e25dceb95",
+                      "createdAt": "2026-07-28T01:47:24.000Z",
+                      "updatedAt": "2026-07-28T01:47:24.000Z",
+                      "uid": "35240-47eda9db-07b7-4f1e-a0f9-6b1e25dceb95"
+                    }
+                  ],
+                  "id": "075ac680-0889-4c6e-b43b-a97a3969ab39",
+                  "createdAt": "2026-07-28T01:47:24.000Z",
+                  "updatedAt": "2026-07-28T01:47:24.000Z",
+                  "uid": "35240-075ac680-0889-4c6e-b43b-a97a3969ab39"
+                }
+              ],
+              "id": "6cf601fa-2b6b-4e64-811e-6cd84ce37ed3",
+              "createdAt": "2026-07-28T01:47:24.000Z",
+              "updatedAt": "2026-07-28T01:47:24.000Z",
+              "uid": "35240-6cf601fa-2b6b-4e64-811e-6cd84ce37ed3"
+            }
+          ],
+          "id": "1e8509de-0f02-4b2a-a8f5-c806e19ce5c2",
+          "createdAt": "2026-07-28T01:47:24.000Z",
+          "updatedAt": "2026-07-28T01:47:24.000Z",
+          "uid": "35240-1e8509de-0f02-4b2a-a8f5-c806e19ce5c2"
+        }
+      ],
+      "id": "02cf578a-e717-4293-b04f-084f83c77c6d",
+      "createdAt": "2026-07-28T01:47:24.000Z",
+      "updatedAt": "2026-07-28T01:47:24.000Z",
+      "uid": "35240-02cf578a-e717-4293-b04f-084f83c77c6d"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/ndev.clouddns.readwrite https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://dns.googleapis.com/dns/v1"
+    }
+  ]
+}

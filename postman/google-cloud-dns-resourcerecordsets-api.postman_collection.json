@@ -1,0 +1,344 @@
+{
+  "info": {
+    "_postman_id": "69eac97e-b11e-4551-b428-5fc32f14d4e8",
+    "name": "Google Cloud DNS Changes ResourceRecordSets API",
+    "description": "Manages DNS zones and resource record sets on Google Cloud, including creating managed zones, configuring DNS records, and managing DNS policies.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:47:30.000Z",
+    "updatedAt": "2026-07-28T01:47:30.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-69eac97e-b11e-4551-b428-5fc32f14d4e8"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{project}",
+          "item": [
+            {
+              "name": "managedZones",
+              "item": [
+                {
+                  "name": "{managedZone}",
+                  "item": [
+                    {
+                      "name": "rrsets",
+                      "item": [
+                        {
+                          "name": "Google Cloud DNS List Resource Record Sets",
+                          "id": "393caf2a-4e84-40cd-8184-e0340f2dea4d",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/managedZones/:managedZone/rrsets?name=<string>&type=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "managedZones",
+                                ":managedZone",
+                                "rrsets"
+                              ],
+                              "query": [
+                                {
+                                  "key": "name",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "type",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "86980e80-74e9-4a4e-bc58-3060d19ffa49",
+                                  "key": "project",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "5757a5de-e556-4012-b36f-013ba6ca1151",
+                                  "key": "managedZone",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Enumerates resource record sets that are associated with the managed zone."
+                          },
+                          "response": [
+                            {
+                              "id": "cbe3f4ab-49de-4968-b203-24614c23c844",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/managedZones/:managedZone/rrsets?name=<string>&type=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "managedZones",
+                                    ":managedZone",
+                                    "rrsets"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "name",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "type",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project"
+                                    },
+                                    {
+                                      "key": "managedZone"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"rrsets\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"SRV\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"CAA\",\n      \"ttl\": \"<integer>\",\n      \"rrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"signatureRrdatas\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:47:30.000Z",
+                              "updatedAt": "2026-07-28T01:47:30.000Z",
+                              "uid": "35240-cbe3f4ab-49de-4968-b203-24614c23c844"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:47:30.000Z",
+                          "updatedAt": "2026-07-28T01:47:30.000Z",
+                          "uid": "35240-393caf2a-4e84-40cd-8184-e0340f2dea4d"
+                        },
+                        {
+                          "name": "Google Cloud DNS Create Resource Record Set",
+                          "id": "7fc915bd-958a-4a55-a3ca-9496e0fbfe32",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"CNAME\",\n  \"ttl\": \"<integer>\",\n  \"rrdatas\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"signatureRrdatas\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/projects/:project/managedZones/:managedZone/rrsets",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "projects",
+                                ":project",
+                                "managedZones",
+                                ":managedZone",
+                                "rrsets"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "91f52942-9812-479e-8ada-94359a759624",
+                                  "key": "project",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "a0bcfd2d-2f5a-4a35-8295-e1e8e9a6c020",
+                                  "key": "managedZone",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Creates a new resource record set."
+                          },
+                          "response": [
+                            {
+                              "id": "1fc0b9a4-b19b-4a57-bdb4-2abe4d07f55f",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"type\": \"CNAME\",\n  \"ttl\": \"<integer>\",\n  \"rrdatas\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"signatureRrdatas\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/projects/:project/managedZones/:managedZone/rrsets",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "projects",
+                                    ":project",
+                                    "managedZones",
+                                    ":managedZone",
+                                    "rrsets"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "project"
+                                    },
+                                    {
+                                      "key": "managedZone"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"name\": \"<string>\",\n  \"type\": \"CNAME\",\n  \"ttl\": \"<integer>\",\n  \"rrdatas\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"signatureRrdatas\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                              "createdAt": "2026-07-28T01:47:30.000Z",
+                              "updatedAt": "2026-07-28T01:47:30.000Z",
+                              "uid": "35240-1fc0b9a4-b19b-4a57-bdb4-2abe4d07f55f"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:47:30.000Z",
+                          "updatedAt": "2026-07-28T01:47:30.000Z",
+                          "uid": "35240-7fc915bd-958a-4a55-a3ca-9496e0fbfe32"
+                        }
+                      ],
+                      "id": "2f5c8417-e8ea-460f-9a05-c2715cb7d8ba",
+                      "createdAt": "2026-07-28T01:47:30.000Z",
+                      "updatedAt": "2026-07-28T01:47:30.000Z",
+                      "uid": "35240-2f5c8417-e8ea-460f-9a05-c2715cb7d8ba"
+                    }
+                  ],
+                  "id": "df72eeb9-7f6c-4099-a885-b55ebc6fd0e6",
+                  "createdAt": "2026-07-28T01:47:30.000Z",
+                  "updatedAt": "2026-07-28T01:47:30.000Z",
+                  "uid": "35240-df72eeb9-7f6c-4099-a885-b55ebc6fd0e6"
+                }
+              ],
+              "id": "8141a829-680a-4a20-b7ce-549606bcc5bf",
+              "createdAt": "2026-07-28T01:47:30.000Z",
+              "updatedAt": "2026-07-28T01:47:30.000Z",
+              "uid": "35240-8141a829-680a-4a20-b7ce-549606bcc5bf"
+            }
+          ],
+          "id": "facd098a-970b-47c1-ba58-dfb8ae6ed51e",
+          "createdAt": "2026-07-28T01:47:30.000Z",
+          "updatedAt": "2026-07-28T01:47:30.000Z",
+          "uid": "35240-facd098a-970b-47c1-ba58-dfb8ae6ed51e"
+        }
+      ],
+      "id": "38c5789c-a653-4b33-a6a6-4f500eec961c",
+      "createdAt": "2026-07-28T01:47:30.000Z",
+      "updatedAt": "2026-07-28T01:47:30.000Z",
+      "uid": "35240-38c5789c-a653-4b33-a6a6-4f500eec961c"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/ndev.clouddns.readwrite https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://dns.googleapis.com/dns/v1"
+    }
+  ]
+}

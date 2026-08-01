@@ -1,0 +1,20 @@
+{
+  "provider": "google-cloud-dns",
+  "sources": [
+    "google-cloud-dns-changes-api-openapi.yml",
+    "google-cloud-dns-managedzones-api-openapi.yml",
+    "google-cloud-dns-policies-api-openapi.yml",
+    "google-cloud-dns-resourcerecordsets-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-cloud-dns-changes-api-openapi.yml",
+    "google-cloud-dns-managedzones-api-openapi.yml",
+    "google-cloud-dns-policies-api-openapi.yml",
+    "google-cloud-dns-resourcerecordsets-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

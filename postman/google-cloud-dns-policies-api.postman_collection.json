@@ -1,0 +1,162 @@
+{
+  "info": {
+    "_postman_id": "d1952e95-a457-4d00-bd8d-ee7874858e85",
+    "name": "Google Cloud DNS Changes Policies API",
+    "description": "Manages DNS zones and resource record sets on Google Cloud, including creating managed zones, configuring DNS records, and managing DNS policies.\n\nContact Support:\n Name: Google Cloud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:47:27.000Z",
+    "updatedAt": "2026-07-28T01:47:27.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d1952e95-a457-4d00-bd8d-ee7874858e85"
+  },
+  "item": [
+    {
+      "name": "projects",
+      "item": [
+        {
+          "name": "{project}",
+          "item": [
+            {
+              "name": "policies",
+              "item": [
+                {
+                  "name": "Google Cloud DNS List Policies",
+                  "id": "2d5d69f7-b497-40e3-8a78-10828ecb6c5c",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/projects/:project/policies",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "projects",
+                        ":project",
+                        "policies"
+                      ],
+                      "variable": [
+                        {
+                          "id": "0e0a19fc-b12a-421a-afd3-c5e51762668b",
+                          "key": "project",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Enumerates all policies associated with a project."
+                  },
+                  "response": [
+                    {
+                      "id": "615f4fb8-4958-42a7-9047-4891d07c1eb4",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/projects/:project/policies",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "projects",
+                            ":project",
+                            "policies"
+                          ],
+                          "variable": [
+                            {
+                              "key": "project"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"policies\": [\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"enableInboundForwarding\": \"<boolean>\",\n      \"enableLogging\": \"<boolean>\",\n      \"networks\": [\n        {\n          \"networkUrl\": \"<string>\"\n        },\n        {\n          \"networkUrl\": \"<string>\"\n        }\n      ],\n      \"alternativeNameServerConfig\": {\n        \"targetNameServers\": [\n          {\n            \"ipv4Address\": \"<string>\",\n            \"forwardingPath\": \"<string>\"\n          },\n          {\n            \"ipv4Address\": \"<string>\",\n            \"forwardingPath\": \"<string>\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"enableInboundForwarding\": \"<boolean>\",\n      \"enableLogging\": \"<boolean>\",\n      \"networks\": [\n        {\n          \"networkUrl\": \"<string>\"\n        },\n        {\n          \"networkUrl\": \"<string>\"\n        }\n      ],\n      \"alternativeNameServerConfig\": {\n        \"targetNameServers\": [\n          {\n            \"ipv4Address\": \"<string>\",\n            \"forwardingPath\": \"<string>\"\n          },\n          {\n            \"ipv4Address\": \"<string>\",\n            \"forwardingPath\": \"<string>\"\n          }\n        ]\n      }\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:47:28.000Z",
+                      "updatedAt": "2026-07-28T01:47:28.000Z",
+                      "uid": "35240-615f4fb8-4958-42a7-9047-4891d07c1eb4"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:47:28.000Z",
+                  "updatedAt": "2026-07-28T01:47:28.000Z",
+                  "uid": "35240-2d5d69f7-b497-40e3-8a78-10828ecb6c5c"
+                }
+              ],
+              "id": "5790f43f-6c10-487f-91df-06e85445a5c9",
+              "createdAt": "2026-07-28T01:47:27.000Z",
+              "updatedAt": "2026-07-28T01:47:27.000Z",
+              "uid": "35240-5790f43f-6c10-487f-91df-06e85445a5c9"
+            }
+          ],
+          "id": "58f212e5-414b-4ea6-a349-5e8c958c34fa",
+          "createdAt": "2026-07-28T01:47:27.000Z",
+          "updatedAt": "2026-07-28T01:47:27.000Z",
+          "uid": "35240-58f212e5-414b-4ea6-a349-5e8c958c34fa"
+        }
+      ],
+      "id": "86e85538-2077-467c-b856-004ecb274a72",
+      "createdAt": "2026-07-28T01:47:27.000Z",
+      "updatedAt": "2026-07-28T01:47:27.000Z",
+      "uid": "35240-86e85538-2077-467c-b856-004ecb274a72"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/ndev.clouddns.readwrite https://www.googleapis.com/auth/cloud-platform",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://dns.googleapis.com/dns/v1"
+    }
+  ]
+}
