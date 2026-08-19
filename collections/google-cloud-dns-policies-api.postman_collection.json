@@ -1,0 +1,151 @@
+{
+  "item": [
+    {
+      "id": "4cae762e-9da9-452b-86bd-761084c1171b",
+      "name": "Policies",
+      "description": {
+        "content": "Manage DNS policies",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "93e6aa09-a742-4a5a-a7e0-7ab4c1a37baf",
+          "name": "Google Cloud DNS List Policies",
+          "request": {
+            "name": "Google Cloud DNS List Policies",
+            "description": {
+              "content": "Enumerates all policies associated with a project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "projects",
+                ":project",
+                "policies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "project",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b7e8f8e7-29f5-4267-bb47-5b3392e7fa34",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "projects",
+                    ":project",
+                    "policies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "project",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"policies\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"enableInboundForwarding\": true,\n      \"enableLogging\": true,\n      \"networks\": [\n        {\n          \"networkUrl\": \"string\"\n        },\n        {\n          \"networkUrl\": \"string\"\n        }\n      ],\n      \"alternativeNameServerConfig\": {\n        \"targetNameServers\": [\n          {\n            \"ipv4Address\": \"string\",\n            \"forwardingPath\": \"string\"\n          },\n          {\n            \"ipv4Address\": \"string\",\n            \"forwardingPath\": \"string\"\n          }\n        ]\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"enableInboundForwarding\": false,\n      \"enableLogging\": true,\n      \"networks\": [\n        {\n          \"networkUrl\": \"string\"\n        },\n        {\n          \"networkUrl\": \"string\"\n        }\n      ],\n      \"alternativeNameServerConfig\": {\n        \"targetNameServers\": [\n          {\n            \"ipv4Address\": \"string\",\n            \"forwardingPath\": \"string\"\n          },\n          {\n            \"ipv4Address\": \"string\",\n            \"forwardingPath\": \"string\"\n          }\n        ]\n      }\n    }\n  ],\n  \"nextPageToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://dns.googleapis.com/dns/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/ndev.clouddns.readwrite https://www.googleapis.com/auth/cloud-platform"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a52ea714-deee-42ac-ba5a-04209363ffb9",
+    "name": "Google Cloud DNS Changes Policies API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Manages DNS zones and resource record sets on Google Cloud, including creating managed zones, configuring DNS records, and managing DNS policies.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}
