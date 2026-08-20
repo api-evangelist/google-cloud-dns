@@ -90,6 +90,8 @@ apis:
   humanURL: https://cloud.google.com/dns/docs/reference/v1
   baseURL: https://dns.googleapis.com
   tags:
+  - Resource Record Sets
+  tags_raw:
   - ResourceRecordSets
   properties:
   - type: OpenAPI
