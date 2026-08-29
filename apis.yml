@@ -117,6 +117,9 @@ apis:
   - type: JSONSchema
     url: json-schema/dns-managedzone.json
 common:
+  - type: CapabilityMap
+    url: capabilities/google-cloud-dns-capability-edges.yml
+    name: Google Cloud DNS Business Capability Map
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/google-cloud-dns/overview
   - type: AgenticAccess
