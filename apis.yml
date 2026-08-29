@@ -4,6 +4,18 @@ description: >-
   Google Cloud DNS is a scalable, reliable, and managed authoritative Domain Name System (DNS) service running on the
   same infrastructure as Google. It provides low-latency, high-availability DNS serving with 100% uptime SLA, supporting
   both public and private DNS zones for domain name resolution.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
