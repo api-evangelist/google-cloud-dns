@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Google Cloud DNS Changes ManagedZones API
+  title: Google Cloud DNS Changes Managed Zones API
   description: Manages DNS zones and resource record sets on Google Cloud, including creating managed zones, configuring DNS records, and managing DNS policies.
   version: 1.0.0
   contact:

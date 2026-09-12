@@ -15,6 +15,12 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "google-cloud-dns-changes-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "google-cloud-dns-managedzones-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "google-cloud-dns-policies-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "google-cloud-dns-resourcerecordsets-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }
