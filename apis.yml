@@ -96,18 +96,16 @@ apis:
     url: https://cloud.google.com/dns/docs/quickstart
   - type: JSONSchema
     url: json-schema/dns-managedzone.json
-- aid: google-cloud-dns:google-cloud-dns-resourcerecordsets-api
-  name: Google Cloud DNS ResourceRecordSets API
+- aid: google-cloud-dns:google-cloud-dns-resource-record-sets-api
+  name: Google Cloud DNS Resource Record Sets API
   description: Manage DNS resource record sets
   humanURL: https://cloud.google.com/dns/docs/reference/v1
   baseURL: https://dns.googleapis.com
   tags:
   - Resource Record Sets
-  tags_raw:
-  - ResourceRecordSets
   properties:
   - type: OpenAPI
-    url: openapi/google-cloud-dns-resourcerecordsets-api-openapi.yml
+    url: openapi/google-cloud-dns-resource-record-sets-api-openapi.yml
   - type: Documentation
     url: https://cloud.google.com/dns/docs/reference/v1
   - type: Authentication
