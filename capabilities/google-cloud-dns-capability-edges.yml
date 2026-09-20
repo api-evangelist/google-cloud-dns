@@ -33,7 +33,8 @@ edges:
   reason: DNS record change operations are cloud/network infrastructure administration, not telecom operator
     network change management.
 - tag: ResourceRecordSets
-  spec_file: google-cloud-dns-resourcerecordsets-api-openapi.yml
+  spec_file: google-cloud-dns-resource-record-sets-api-openapi.yml
+  reanchored_from: google-cloud-dns-resourcerecordsets-api-openapi.yml
   capability_id: BC-600.50
   capability_id_l1: BC-600
   capability_name: IT Infrastructure Management
