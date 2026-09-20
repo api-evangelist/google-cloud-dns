@@ -115,6 +115,8 @@ apis:
   - type: JSONSchema
     url: json-schema/dns-managedzone.json
 common:
+  - type: Plans
+    url: plans/google-cloud-dns-plans-pricing.yml
   - type: Website
     url: https://www.google.com/
   - type: CapabilityMap
