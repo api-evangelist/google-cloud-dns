@@ -115,6 +115,8 @@ apis:
   - type: JSONSchema
     url: json-schema/dns-managedzone.json
 common:
+  - type: RateLimits
+    url: rate-limits/google-cloud-dns-rate-limits.yml
   - type: Plans
     url: plans/google-cloud-dns-plans-pricing.yml
   - type: Website
