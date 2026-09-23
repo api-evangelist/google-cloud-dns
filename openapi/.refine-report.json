@@ -1,10 +1,7 @@
 {
   "provider": "google-cloud-dns",
   "sources": [
-    "google-cloud-dns-changes-api-openapi.yml",
-    "google-cloud-dns-managedzones-api-openapi.yml",
-    "google-cloud-dns-policies-api-openapi.yml",
-    "google-cloud-dns-resourcerecordsets-api-openapi.yml"
+    "_original/dns-openapi.yml"
   ],
   "outputs": [
     "google-cloud-dns-changes-api-openapi.yml",
@@ -12,15 +9,21 @@
     "google-cloud-dns-policies-api-openapi.yml",
     "google-cloud-dns-resourcerecordsets-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
-    "google-cloud-dns-changes-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-cloud-dns-managedzones-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-cloud-dns-policies-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "google-cloud-dns-resourcerecordsets-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "dns-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: google-cloud-dns-resource-record-sets-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 4 total)"
   ],
-  "skipped": []
+  "skipped": [
+    "google-cloud-dns-changes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-cloud-dns-managedzones-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-cloud-dns-policies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "google-cloud-dns-resource-record-sets-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

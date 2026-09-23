@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Google Cloud DNS Changes Resource Record Sets API
+  title: Google Cloud DNS Resource Record Sets API
   description: Manages DNS zones and resource record sets on Google Cloud, including creating managed zones, configuring DNS records, and managing DNS policies.
   version: 1.0.0
   contact:
@@ -16,7 +16,7 @@ security:
 - oauth2:
   - https://www.googleapis.com/auth/ndev.clouddns.readwrite
 tags:
-- name: ResourceRecordSets
+- name: Resource Record Sets
   description: Manage DNS resource record sets
 paths:
   /projects/{project}/managedZones/{managedZone}/rrsets:
@@ -25,7 +25,7 @@ paths:
       summary: Google Cloud DNS List Resource Record Sets
       description: Enumerates resource record sets that are associated with the managed zone.
       tags:
-      - ResourceRecordSets
+      - Resource Record Sets
       parameters:
       - name: project
         in: path
@@ -64,7 +64,7 @@ paths:
       summary: Google Cloud DNS Create Resource Record Set
       description: Creates a new resource record set.
       tags:
-      - ResourceRecordSets
+      - Resource Record Sets
       parameters:
       - name: project
         in: path
