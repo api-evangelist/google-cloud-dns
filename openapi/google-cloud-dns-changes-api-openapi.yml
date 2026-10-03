@@ -82,27 +82,6 @@ paths:
                 $ref: '#/components/schemas/Change'
 components:
   schemas:
-    Change:
-      type: object
-      properties:
-        id:
-          type: string
-        status:
-          type: string
-          enum:
-          - pending
-          - done
-        startTime:
-          type: string
-          format: date-time
-        additions:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResourceRecordSet'
-        deletions:
-          type: array
-          items:
-            $ref: '#/components/schemas/ResourceRecordSet'
     ResourceRecordSet:
       type: object
       properties:
@@ -131,6 +110,27 @@ components:
           type: array
           items:
             type: string
+    Change:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+          enum:
+          - pending
+          - done
+        startTime:
+          type: string
+          format: date-time
+        additions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceRecordSet'
+        deletions:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResourceRecordSet'
   securitySchemes:
     oauth2:
       type: oauth2
