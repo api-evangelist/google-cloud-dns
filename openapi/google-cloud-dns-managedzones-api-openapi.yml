@@ -154,17 +154,6 @@ paths:
           description: Successful deletion
 components:
   schemas:
-    Operation:
-      type: object
-      properties:
-        id:
-          type: string
-        status:
-          type: string
-        dnsKeyContext:
-          type: object
-        zoneContext:
-          type: object
     ManagedZone:
       type: object
       properties:
@@ -199,6 +188,17 @@ components:
         creationTime:
           type: string
           format: date-time
+    Operation:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+        dnsKeyContext:
+          type: object
+        zoneContext:
+          type: object
   securitySchemes:
     oauth2:
       type: oauth2
