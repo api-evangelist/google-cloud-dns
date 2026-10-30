@@ -1,4 +1,4 @@
-# Google Cloud DNS (google-cloud-dns)
+# Google Cloud DNS
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,67 +66,159 @@
 
 Google Cloud DNS is a scalable, reliable, and managed authoritative Domain Name System (DNS) service running on the same infrastructure as Google. It provides low-latency, high-availability DNS serving with 100% uptime SLA, supporting both public and private DNS zones for domain name resolution.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-search/google-cloud-dns/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-search/google-cloud-dns/refs/heads/main/apis.yml)
+**Areas:** DNS · Domain Names · Google Cloud · Name Resolution · Networking
 
-## Scope
+## Google Cloud DNS on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Cloud DNS is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-cloud-dns/](https://apis.io/providers/google-cloud-dns/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (4)
 
-- DNS
-- Domain Names
-- Google Cloud
-- Name Resolution
-- Networking
+- [Google Cloud DNS Changes API](https://apis.io/apis/google-cloud-dns/google-cloud-dns-changes-api/) — Manage DNS changes
+- [Google Cloud DNS ManagedZones API](https://apis.io/apis/google-cloud-dns/google-cloud-dns-managedzones-api/) — Manage DNS zones
+- [Google Cloud DNS Policies API](https://apis.io/apis/google-cloud-dns/google-cloud-dns-policies-api/) — Manage DNS policies
+- [Google Cloud DNS Resource Record Sets API](https://apis.io/apis/google-cloud-dns/google-cloud-dns-resource-record-sets-api/) — Manage DNS resource record sets
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Google Cloud DNS API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Cloud DNS API enables programmatic management of DNS zones and resource record sets, including creating and configuring managed zones, adding and modifying DNS records, and managing DNS policies for private zones.
+- [Google Cloud Dns Agentic Access](https://apis.io/agentic-access/google-cloud-dns/google-cloud-dns-agentic-access/)
 
-- **Human URL:** [https://cloud.google.com/dns/docs/reference/v1](https://cloud.google.com/dns/docs/reference/v1)
-- **Base URL:** `https://dns.googleapis.com`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Changes
-- DNS Policies
-- Managed Zones
-- Resource Record Sets
+- [Google Cloud DNS Managed Zone](https://apis.io/schemas/google-cloud-dns/dns-managedzone/)
 
-#### Properties
+#### JSON-LD (1)
 
-- [Documentation](https://cloud.google.com/dns/docs/reference/v1)
-- [OpenAPI](openapi/dns-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/dns.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/dns.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://cloud.google.com/docs/authentication)
-- [Getting Started](https://cloud.google.com/dns/docs/quickstart)
-- [JSON Schema](json-schema/dns-managedzone.json) — [JSON Schema](https://json-schema.org/specification)
+Linked-data contexts for the provider's vocabulary.
 
-## Common Properties
+- [Dns Context](https://apis.io/jsonld/google-cloud-dns/dns-context/)
 
-- [GitHub Organization](https://github.com/googleapis)
-- [Portal](https://cloud.google.com/dns)
-- [Getting Started](https://cloud.google.com/dns/docs/quickstart)
+#### Collections (9)
+
+Postman and Open Collection request collections.
+
+- [Google Cloud DNS API](https://apis.io/collections/google-cloud-dns/open-dns/)
+- [Google Cloud DNS Changes API](https://apis.io/collections/google-cloud-dns/open-google-cloud-dns-changes-api/)
+- [Google Cloud DNS Changes ManagedZones API](https://apis.io/collections/google-cloud-dns/open-google-cloud-dns-managedzones-api/)
+- [Google Cloud DNS Changes Policies API](https://apis.io/collections/google-cloud-dns/open-google-cloud-dns-policies-api/)
+- [Google Cloud DNS Changes ResourceRecordSets API](https://apis.io/collections/google-cloud-dns/open-google-cloud-dns-resourcerecordsets-api/)
+- [Google Cloud DNS Changes API](https://apis.io/collections/google-cloud-dns/postman-google-cloud-dns-changes-api/)
+- [Google Cloud DNS Changes ManagedZones API](https://apis.io/collections/google-cloud-dns/postman-google-cloud-dns-managedzones-api/)
+- [Google Cloud DNS Changes Policies API](https://apis.io/collections/google-cloud-dns/postman-google-cloud-dns-policies-api/)
+- [Google Cloud DNS Changes ResourceRecordSets API](https://apis.io/collections/google-cloud-dns/postman-google-cloud-dns-resourcerecordsets-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Cloud DNS — jsonschema rules](https://apis.io/rules/google-cloud-dns/google-cloud-dns-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Cloud Dns Authentication](https://apis.io/security/google-cloud-dns/google-cloud-dns-authentication/)
+- [Google Cloud Dns Domain Security](https://apis.io/security/google-cloud-dns/google-cloud-dns-domain-security/)
+- [Google Cloud Dns Vulnerability Disclosure](https://apis.io/security/google-cloud-dns/google-cloud-dns-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Google Cloud Dns Scopes](https://apis.io/scopes/google-cloud-dns/google-cloud-dns-scopes/)
+
+#### Plans and pricing (2)
+
+Published plans, tiers and prices.
+
+- [Google Cloud Dns Plans Pricing](https://apis.io/plans/google-cloud-dns/google-cloud-dns-plans-pricing/)
+- [Google Cloud Dns Price Estimates](https://apis.io/plans/google-cloud-dns/google-cloud-dns-price-estimates/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Cloud Dns Rate Limits](https://apis.io/rate-limits/google-cloud-dns/google-cloud-dns-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Cloud Dns Finops](https://apis.io/finops/google-cloud-dns/google-cloud-dns-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
 - [Documentation](https://cloud.google.com/dns/docs)
-- [Authentication](https://cloud.google.com/docs/authentication)
+- [Getting started](https://cloud.google.com/dns/docs/quickstart)
 - [Pricing](https://cloud.google.com/dns/pricing)
-- [Terms of Service](https://cloud.google.com/terms)
-- [Privacy Policy](https://policies.google.com/privacy)
-- [Status Page](https://status.cloud.google.com/)
 - [Support](https://cloud.google.com/dns/docs/support)
-- [JSON-LD](json-ld/dns-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Integrations](https://cloud.google.com/marketplace)
+- [Terms of service](https://cloud.google.com/terms)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/googleapis)
+- [Status](https://status.cloud.google.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 55.6** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 58.1 |
+| Contract governance | 9.8 |
+| Operational transparency | 60.5 |
+| Developer ergonomics | 48.8 |
+| Access clarity | 63.2 |
+
+**Agent readiness 26.4** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-cloud-dns/](https://apis.io/providers/google-cloud-dns/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Cloud DNS: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-cloud-dns/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
